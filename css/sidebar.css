@@ -1,0 +1,67 @@
+/* Styling Sidebar */
+.sidebar {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+    transition: right 0.3s ease;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.sidebar.active {
+    right: 0;
+}
+
+.sidebar h3 {
+    margin-bottom: 20px;
+}
+
+.order-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.sidebar-total {
+    margin-top: 20px;
+}
+
+.sidebar-total p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#order-now {
+    width: 100%;
+    background-color: #ff4757;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+#order-now:hover {
+    background-color: #e84118;
+}
+
+/* Overlay yang menutupi seluruh layar saat sidebar aktif */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 998; /* Di bawah sidebar */
+}
+
+/* Tampilkan overlay ketika sidebar aktif */
+.sidebar.active + .overlay {
+    display: block;
+}
